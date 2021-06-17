@@ -51,4 +51,3 @@ class Category extends Model
         return 0;
     }
 }
-

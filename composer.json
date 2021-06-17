@@ -14,8 +14,14 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
         "laravel/framework": "^7.29",
+        "laravel/socialite": "~4.4",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "2.1"
+        "laravel/ui": "2.1",
+        "maatwebsite/excel": "^3.1",
+        "pusher/pusher-php-server": "^7.0",
+        "razorpay/razorpay": "2.7",
+        "spatie/laravel-newsletter": "4.8",
+        "unisharp/laravel-filemanager": "2.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -46,7 +52,10 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files":[
+            "app/Http/Helpers.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

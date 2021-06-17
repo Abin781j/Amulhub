@@ -22,6 +22,10 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::HOME);
         }
 
+        if($guard =="employee" && Auth::guard($guard)->check()){
+            return redirect('/employee');
+        }
+
         return $next($request);
     }
 }
