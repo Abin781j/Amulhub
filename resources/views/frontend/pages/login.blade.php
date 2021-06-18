@@ -64,6 +64,7 @@
                                             Lost your password?
                                         </a>
                                     @endif
+                                    <a class="checkbox-inline" href="{{ route('elogin.form') }}">Are you an Employee</a>
                                 </div>
                             </div>
                         </form>
