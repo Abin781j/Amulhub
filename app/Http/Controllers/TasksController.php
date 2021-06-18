@@ -14,16 +14,19 @@ class TasksController extends Controller
         ->get();
         $employees = DB::table('employees')
         ->join('attendences', 'employees.id', '=', 'attendences.emp_id')
-        ->select('employees.id', 'attendences.attendence','attendences.att_date')
+        ->select('employees.id', 'attendences.attendence','attendences.att_date')->distinct()
         ->get();
         $date=date("d/m/y");
-        foreach ($employees as $value) {
-            // if($value['attendence']=="present" && $value['att_date']==$date)
-            // {
-                return $value;
-            // }
-        }
-
         //return $employees;
+        foreach($employees as $value) {
+            if($value->attendence=='present' && $value->att_date==$date)
+            {
+                //echo  $value->id;
+                $employs[]=$value->id;
+
+            }
+        }
+        //$values=['orders'=>$orders,'employees'=>$employees];
+        return view('backend.assigntask')->with('employs',$employs)->with('orders',$orders);
     }
 }
